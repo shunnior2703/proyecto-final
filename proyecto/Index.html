@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motos Luxury - Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Motos Luxury - Iniciar Compra</h1>
+    </header>
+
+    <main>
+        <section id="formulario-requerimientos">
+            <form id="requerimientos-form">
+                <label for="nombre">Nombre del Comprador:</label>
+                <input type="text" id="nombre" maxlength="20" placeholder="Ingresa tu nombre" required>
+
+                <label for="presupuesto">Presupuesto Máximo (COP):</label>
+                <input type="number" id="presupuesto" placeholder="5000000" required>
+
+                <label for="cantidad">Cantidad Máxima de Productos:</label>
+                <input type="number" id="cantidad" min="1" max="20" placeholder="Máximo 20" required>
+
+                <label for="direccion">Dirección de Envío:</label>
+                <input type="text" id="direccion" placeholder="Dirección completa" required>
+
+                <label>Tipo de Entrega:</label>
+                <div>
+                    <input type="radio" id="domicilio-si" name="entrega" value="Domicilio" checked>
+                    <label for="domicilio-si">Domicilio</label>
+                    <input type="radio" id="domicilio-no" name="entrega" value="Sin Domicilio">
+                    <label for="domicilio-no">Sin Domicilio</label>
+                </div>
+
+                <button type="button" onclick="iniciarCompra()">Iniciar Compra</button>
+                <button type="button" onclick="limpiarCampos()">Limpiar Campos</button>
+
+                <p id="mensaje-error" class="mensaje-error"></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>

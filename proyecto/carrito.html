@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motos Luxury - Carrito de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Carrito de Compras</h1>
+        <button onclick="window.location.href='productos.html'">Volver a Productos</button>
+        <button onclick="window.location.href='index.html'">Cancelar Compra</button>
+    </header>
+
+    <main class="carrito-container">
+        <section>
+            <h2>🛒 Carrito de Compras</h2>
+            <table id="carrito-tabla">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Subtotal</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="resumen-compra">
+                <p>Total productos: <span id="total-productos">0</span></p>
+                <p>Total a pagar: <span id="total-pagar">$0</span></p>
+                <label>
+                    <input type="checkbox" id="domicilio"> Incluir domicilio (+$15,000)
+                </label>
+            </div>
+        </section>
+
+        <section class="formulario-pago">
+            <h2>Tarjeta de Crédito</h2>
+            <form id="form-pago">
+                <label>Número de Tarjeta:
+                    <input type="text" id="numero-tarjeta" maxlength="16" placeholder="1234 5678 9012 3456" required>
+                </label>
+                <label>Fecha Expiración (MM/AA):
+                    <input type="text" id="fecha-expiracion" maxlength="4" placeholder="MM/AA" required>
+                </label>
+                <label>Código de Seguridad:
+                    <input type="password" id="codigo-seguridad" maxlength="3" placeholder="***" required>
+                </label>
+                <label>Nombre del Titular:
+                    <input type="text" id="nombre-titular" maxlength="20" required>
+                </label>
+                <label>País de Emisión:
+                    <select id="pais-emision">
+                        <option>Colombia</option>
+                        <option>Argentina</option>
+                        <option>Chile</option>
+                        <option>Perú</option>
+                        <option>Brasil</option>
+                        <option>Mexico</option>
+                        <option>España</option>
+                        <option>Estados Unidos</option>
+                        <option>Canadá</option>
+                        <option>Alemania</option>
+                    </select>
+                </label>
+                <label>Tipo de Tarjeta:
+                    <select id="tipo-tarjeta">
+                        <option>Mastercard</option>
+                        <option>Visa</option>
+                        <option>Prepagada</option>
+                    </select>
+                </label>
+                <button type="button" onclick="limpiarCampos()">Limpiar Campos</button>
+                <button type="button" onclick="confirmarCompra()">Confirmar Compra</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="carrito.js"></script>
+</body>
+</html>
